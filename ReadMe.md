@@ -4,6 +4,8 @@ A flexbox implementation for the UWP app framework.
 - Flex extends Panel and uses Facebook Yoga for calculating the right size and position of the items.
 - Support design time rendering in xaml
 
+![Flex behavior sample](./FlexSample.gif)
+
 ## Flex properties (container)
 
 | Property       | Type                                                                                                | Default   |
