@@ -28,6 +28,7 @@ A flexbox implementation for the UWP app framework.
 | BasisUnit  | enum = Percentage \| Point                                                                          | Point   |
 | FlexWidth  | float                                                                                               | NaN     |
 | FlexHeight | float                                                                                               | NaN     |
+| FlexBasis  | float                                                                                               | NaN     |
 
 ## Example usage
 
