@@ -94,3 +94,4 @@ example usage
 ## Todo
 - Absolute positioning
 - Aspect ratio implementation
+- Missig basis property usage
