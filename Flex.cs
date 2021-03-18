@@ -41,10 +41,19 @@ namespace YogaFlex.UWP
         public static double GetFlexWidth(DependencyObject obj) => (double)obj.GetValue(FlexWidthProperty);
         public static void SetFlexWidth(DependencyObject obj, double value) => obj.SetValue(FlexWidthProperty, value);
 
+        public static readonly DependencyProperty PositionProperty = DependencyProperty.RegisterAttached("Position", typeof(YogaPositionType), typeof(Flex), new PropertyMetadata(YogaPositionType.Relative, new PropertyChangedCallback(OnParentChanged)));
+        public static YogaPositionType GetPosition(DependencyObject obj) => (YogaPositionType)obj.GetValue(PositionProperty);
+        public static void SetPosition(DependencyObject obj, YogaPositionType value) => obj.SetValue(PositionProperty, value);
+
         public static readonly DependencyProperty FlexHeightProperty = DependencyProperty.RegisterAttached("FlexHeight", typeof(double), typeof(Flex), new PropertyMetadata(double.NaN, new PropertyChangedCallback(OnParentChanged)));
         public static double GetFlexHeight(DependencyObject obj) => (double)obj.GetValue(FlexHeightProperty);
         public static void SetFlexHeight(DependencyObject obj, double value) => obj.SetValue(FlexHeightProperty, value);
 
+        public static readonly DependencyProperty AspectRatioProperty = DependencyProperty.RegisterAttached("AspectRatio", typeof(double), typeof(Flex), new PropertyMetadata(double.NaN, new PropertyChangedCallback(OnParentChanged)));
+        public static double GetAspectRatio(DependencyObject obj) => (double)obj.GetValue(AspectRatioProperty);
+        public static void SetAspectRatio(DependencyObject obj, double value) => obj.SetValue(AspectRatioProperty, value);
+
+        // DirectProperties
         public static readonly DependencyProperty DirectionProperty = DependencyProperty.Register("Direction", typeof(YogaFlexDirection), typeof(Flex), new PropertyMetadata(YogaFlexDirection.Row, new PropertyChangedCallback((d, e) => { ((UIElement)d).InvalidateMeasure(); })));
         public YogaFlexDirection Direction { get => (YogaFlexDirection)GetValue(DirectionProperty); set => SetValue(DirectionProperty, value); }
 
@@ -132,6 +141,8 @@ namespace YogaFlex.UWP
             item.AlignSelf = GetAlignSelf(c);
             item.FlexShrink = GetShrink(c);
             item.FlexGrow = GetGrow(c);
+            item.AspectRatio = (float)GetAspectRatio(c);
+            item.PositionType = GetPosition(c);
 
             item.MarginLeft = (float)margin.Left;
             item.MarginRight = (float)margin.Right;
