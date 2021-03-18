@@ -29,7 +29,6 @@ namespace YogaFlex.UWP
         public static RenderUnit GetWidthUnit(DependencyObject obj) => (RenderUnit)obj.GetValue(WidthUnitProperty);
         public static void SetWidthUnit(DependencyObject obj, RenderUnit value) => obj.SetValue(WidthUnitProperty, value);
 
-        // TODO: do not use childrens width and heights
         public static readonly DependencyProperty BasisProperty = DependencyProperty.RegisterAttached("FlexBasis", typeof(float), typeof(Flex), new PropertyMetadata(float.NaN));
         public static float GetBasis(DependencyObject obj) => (float)obj.GetValue(BasisProperty);
         public static void SetBasis(DependencyObject obj, double value) => obj.SetValue(BasisProperty, value);
