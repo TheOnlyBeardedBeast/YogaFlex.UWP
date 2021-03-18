@@ -2,7 +2,7 @@
 A flexbox implementation for the UWP app framework.
 
 - Flex extends Panel and uses Facebook Yoga for calculating the right size and position of the items.
-- Support design time rendering in xaml editors
+- Support design time rendering in xaml
 
 ![Flex behavior sample](./FlexSample.gif)
 
@@ -28,7 +28,7 @@ A flexbox implementation for the UWP app framework.
 | BasisUnit  | enum = Percentage \| Point                                                                          | Point   |
 | FlexWidth  | float                                                                                               | NaN     |
 | FlexHeight | float                                                                                               | NaN     |
-| FlexBasis  | float                                                                                               | NaN     |
+| AspectRatio | double                                                                                               | NaN     |
 
 ## Example usage
 
@@ -93,5 +93,3 @@ example usage
 
 ## Todo
 - Absolute positioning
-- Aspect ratio implementation
-- Missig basis property usage
